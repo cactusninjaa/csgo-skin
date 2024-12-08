@@ -1,4 +1,4 @@
-import {getStoredSkins} from './skin.js'
+import {getStoredSkins} from './skins.js'
 
 export const getQuestions = async (req, res) => {
     try {
