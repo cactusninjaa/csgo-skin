@@ -17,7 +17,7 @@ export default {
   },
   mounted() {
     // Fetch skins
-    fetch('http://localhost:3000/skins')
+    fetch('https://csgo-skin.onrender.com/skins')
       .then(response => response.json())
       .then(data => {
         this.skins = data;
@@ -25,7 +25,7 @@ export default {
       .catch(error => console.error('Error fetching skins:', error));
 
     // Fetch specific question
-    fetch('http://localhost:3000/questions/5')
+    fetch('https://csgo-skin.onrender.com/questions/5')
       .then(response => response.json())
       .then(data => {
         this.questions = data;
