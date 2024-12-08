@@ -34,12 +34,7 @@ export default {
     },
     methods: {
       restartQuiz() {
-      this.currentIndex = 0; // Retourner à la première question
-      this.userInput = ''; // Réinitialiser l'entrée utilisateur
-      this.score = []; // Réinitialiser le score
-      this.showInfoModal = false;
-      this.showModal = false;
-      this.modalData = {};
+        window.location.reload();
     },
       openInfoModal() {
         this.showInfoModal = true; // Ouvre la popup
