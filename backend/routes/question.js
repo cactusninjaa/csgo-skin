@@ -1,16 +1,5 @@
-import { getStoredSkins } from '../../utils/skinsService';
-let skins = [];
+import { getStoredSkins } from './skin.js';
 
-export const getStoredSkins = async () => {
-  if (!skins.length) {
-    throw new Error('No skins available');
-  }
-  return skins;
-};
-
-export const setSkins = async (newSkins) => {
-  skins = newSkins;
-};
 let dailyQuestions = {
   date: null,
   questions: []
@@ -26,17 +15,19 @@ const generateDailyQuestions = async () => {
   return results;
 };
 
-export default async function handler(req, res) {
+const getQuestions = async (req, res) => {
   try {
-    const currentDate = new Date().toDateString();
-
+    const currentDate = new Date().toDateString(); // Obtenir la date en cours
     if (dailyQuestions.date !== currentDate) {
+      // Si la date a changé, régénérer les questions
       dailyQuestions.date = currentDate;
       dailyQuestions.questions = await generateDailyQuestions();
     }
-
-    res.status(200).json(dailyQuestions.questions);
+    
+    res.json(dailyQuestions.questions);
   } catch (error) {
     res.status(500).json({ error: "An error occurred" });
   }
-}
+};
+
+export { getQuestions };
