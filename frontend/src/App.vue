@@ -140,7 +140,6 @@ export default {
       <p class="text-lg sm:text-xl text-gray-600 mb-4">
         Votre score : <span class="font-semibold text-blue-600">{{ score.filter(Boolean).length }} / {{ score.length }}</span>
       </p>
-      <p class="text-gray-500 text-sm sm:text-base mb-6">Revenez demain pour un nouveau défi !</p>
       <button
         @click="restartQuiz"
         class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg transition duration-200"
