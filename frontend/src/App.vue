@@ -113,7 +113,7 @@ export default {
           @keydown.enter="checkAnswer"
           autofocus
           placeholder="Entrez le nom du skin"
-          class="w-full px-3 py-2 border rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
+          class="w-full px-3 py-2 border rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400 text-base"
         />
         <div class="flex space-x-2 sm:space-x-4">
           <button
